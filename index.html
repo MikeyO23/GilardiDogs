@@ -2,183 +2,211 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gilardi Dogs - Booking for 2025!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Gilardi Dogs | Book Your 2025 Event</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #264653;
+      --yellow: #e9c46a;
+      --gray: #f4f4f4;
+      --accent: #f4a261;
+      --white: #fff;
+    }
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #fff8dc;
-      color: #333;
-      line-height: 1.6;
+      background: var(--white);
+      color: var(--blue);
     }
-    .slideshow-container {
+    .slideshow {
       position: relative;
-      max-width: 100%;
-      margin: auto;
+      height: 60vh;
+      overflow: hidden;
     }
-    .slide { display: none; }
-    .slide img {
+    .slide {
+      position: absolute;
       width: 100%;
-      max-height: 450px;
-      object-fit: cover;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
-
-    header {
-      background-color: #f44336;
-      color: white;
-      padding: 20px 10px;
+    .slide.active { opacity: 1; }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--white);
       text-align: center;
+      padding: 0 20px;
     }
+    .hero-overlay h1 { font-size: 2.8em; margin: 0; }
+    .hero-overlay p { font-size: 1.2em; margin-top: 10px; }
 
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2em;
-      font-weight: 300;
-    }
-
-    section {
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    .highlight {
-      background: #fff3cd;
-      font-size: 1.3em;
+    .contact {
+      background: var(--gray);
       padding: 20px;
-      border-top: 2px solid #ffc107;
-      border-bottom: 2px solid #ffc107;
+      text-align: center;
     }
-
-    .info-section {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul li {
-      margin: 10px 0;
-      font-size: 1.1em;
-      background: #f1f1f1;
-      padding: 10px;
-      border-radius: 8px;
-    }
-
-    .contact p, .social p {
-      margin: 10px 0;
-      font-size: 1.1em;
-    }
-
-    .social a {
-      margin: 0 10px;
-      color: #f44336;
-      font-weight: bold;
+    .contact a {
+      color: var(--blue);
+      display: block;
       text-decoration: none;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2em;
+      color: var(--blue);
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--yellow);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .services, .how {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--yellow);
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .calendar {
+      background: var(--accent);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .calendar iframe {
+      border: none;
+      width: 100%;
+      max-width: 900px;
+      height: 600px;
+    }
+
+    .calendar small {
+      display: block;
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #fff;
     }
 
     footer {
-      background: #f3f3f3;
-      padding: 15px;
+      background: var(--blue);
+      color: var(--white);
+      padding: 20px;
+      text-align: center;
       font-size: 0.9em;
-      color: #777;
-      margin-top: 40px;
+    }
+    footer a {
+      color: var(--yellow);
+      text-decoration: none;
+      margin: 0 10px;
     }
 
-    @media (max-width: 768px) {
-      .slide img { max-height: 250px; }
+    @media (max-width: 600px) {
+      .hero-overlay h1 { font-size: 2em; }
+      .calendar iframe { height: 500px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="slideshow-container">
-    <div class="slide fade"><img src="static/blockparty_1.jpg" alt="Blockparty 1"></div>
-    <div class="slide fade"><img src="static/girl_eating_hotdog.jpg" alt="Girl Eating Hotdog"></div>
-    <div class="slide fade"><img src="static/girls_1.jpg" alt="Girls 1"></div>
-    <div class="slide fade"><img src="static/hotdogimages.jpeg" alt="Hotdogimages"></div>
-    <div class="slide fade"><img src="static/owner_cart.jpg" alt="Owner Cart"></div>
-    <div class="slide fade"><img src="static/owner_daughter.jpg" alt="Owner Daughter"></div>
-    <div class="slide fade"><img src="static/owner_wife_2.jpg" alt="Owner Wife 2"></div>
-    <div class="slide fade"><img src="static/owner_wife_park.jpg" alt="Owner Wife Park"></div>
-    <div class="slide fade"><img src="static/wedding_golf_course.jpg" alt="Wedding Golf Course"></div>
-    <div class="slide fade"><img src="static/wedding_venue1.jpg" alt="Wedding Venue 1"></div>
-    <div class="slide fade"><img src="static/wedding_venue_2.jpg" alt="Wedding Venue 2"></div>
+  <!-- HERO SLIDESHOW -->
+  <div class="slideshow">
+    <div class="slide active" style="background-image:url('static/blockparty_1.jpg')"></div>
+    <div class="slide" style="background-image:url('static/wedding_golf_course.jpg')"></div>
+    <div class="slide" style="background-image:url('static/owner_cart.jpg')"></div>
+    <div class="slide" style="background-image:url('static/hotdogimages.jpeg')"></div>
+    <div class="slide" style="background-image:url('static/girl_eating_hotdog.jpg')"></div>
+    <div class="hero-overlay">
+      <h1>Gilardi Dogs</h1>
+      <p>Chicago-style hot dog cart for parties, weddings, & events</p>
+    </div>
   </div>
 
-  <header>
-    <h1>Gilardi Dogs</h1>
-    <p>The Neighborhood Hot Dog Cart 🌭</p>
-  </header>
+  <!-- CONTACT -->
+  <div class="contact">
+    <a href="tel:+17082976863">📞 (708) 297‑6863</a>
+    <a href="mailto:gilardidogs@gmail.com">📧 gilardidogs@gmail.com</a>
+    <a href="https://www.facebook.com/GilardiDogs" target="_blank">📘 Facebook</a>
+    <a href="https://www.instagram.com/gilardidogs" target="_blank">📸 Instagram</a>
+  </div>
 
-  <section class="highlight">
-    🎉 NOW BOOKING 2025 PARTIES! <br>
-    Whether it’s a backyard bash, corporate event, or wedding, bring the Chicago-style hot dog experience to your event.
+  <!-- SERVICES -->
+  <section class="section">
+    <h2>What We Do</h2>
+    <p>We bring a fun, nostalgic, and delicious hot dog cart to your backyard, block party, or big day!</p>
+    <div class="services">
+      <div class="card">🎉 Birthday Parties</div>
+      <div class="card">🎓 Graduations</div>
+      <div class="card">🏢 Corporate Events</div>
+      <div class="card">🏡 Block Parties</div>
+      <div class="card">💍 Weddings</div>
+    </div>
   </section>
 
-  <section class="info-section">
-    <h2>Perfect for:</h2>
-    <ul>
-      <li>Birthday Parties</li>
-      <li>Graduations</li>
-      <li>Corporate Events</li>
-      <li>Block Parties</li>
-      <li>Weddings & Receptions</li>
-    </ul>
-  </section>
-
-  <section class="info-section">
+  <!-- HOW IT WORKS -->
+  <section class="section">
     <h2>How It Works</h2>
-    <ul>
-      <li>✅ Reach out to check date availability</li>
-      <li>⏱️ 2 Hours of unlimited service</li>
-      <li>💲 Priced per person</li>
-      <li>🛠️ We handle setup & bring the cart</li>
-      <li>🌭 Hot Dogs, Polish, Tamales included</li>
-      <li>🧼 We clean up so you can relax!</li>
-    </ul>
+    <div class="how">
+      <div class="card">📅 Check availability</div>
+      <div class="card">⏱ 2 hours of unlimited service</div>
+      <div class="card">🌭 Hot dogs, Polish, tamales</div>
+      <div class="card">🧼 We clean up — you relax!</div>
+    </div>
   </section>
 
-  <section class="info-section contact">
-    <h2>Contact Us</h2>
-    <p><strong>James Gilardi</strong></p>
-    <p>📞 <a href="tel:+17082976863">(708) 297-6863</a></p>
-    <p>📧 <a href="mailto:gilardidogs@gmail.com">gilardidogs@gmail.com</a></p>
+  <!-- CALENDAR -->
+  <section class="calendar">
+    <h2>Request an Open Date</h2>
+    <iframe 
+      src="https://calendar.google.com/calendar/embed?src=90f541f6622332a694866b02518edb4b8e1115b22f274d1956f3b52467d29f6b%40group.calendar.google.com&ctz=America%2FChicago" 
+      frameborder="0" scrolling="no">
+    </iframe>
+    <small>Submitting a time on the calendar does not guarantee availability. You'll receive a confirmation from James within 48–72 hours.</small>
   </section>
 
-  <section class="info-section social">
-    <h2>Follow Us</h2>
-    <p>
-      📘 <a href="https://www.facebook.com/GilardiDogs" target="_blank">Facebook</a>
-      📸 <a href="https://www.instagram.com/gilardidogs" target="_blank">Instagram</a>
-    </p>
-  </section>
-
+  <!-- FOOTER -->
   <footer>
-    © 2025 Gilardi Dogs — All rights reserved
+    © 2025 Gilardi Dogs • <a href="https://facebook.com/GilardiDogs" target="_blank">Facebook</a> • 
+    <a href="https://instagram.com/gilardidogs" target="_blank">Instagram</a>
   </footer>
 
+  <!-- SLIDESHOW SCRIPT -->
   <script>
-    let slideIndex = 0;
-    showSlides();
-    function showSlides() {
-      const slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex - 1].style.display = "block";  
-      setTimeout(showSlides, 3000); // Change every 3 seconds
-    }
+    let slides = document.querySelectorAll('.slide');
+    let i = 0;
+    setInterval(() => {
+      slides[i].classList.remove('active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('active');
+    }, 4000);
   </script>
+
 </body>
 </html>
+
 
