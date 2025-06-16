@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
   <style>
     :root {
-      --blue: #1f4e79; /* Chicago blue */
+      --blue: #1f4e79;
       --red: #ff3b3f;
       --yellow: #e9c46a;
       --gray: #f4f4f4;
@@ -39,13 +39,12 @@
     }
     .slide.active { opacity: 1; }
 
-    /* TITLE BAR BELOW HERO */
+    /* TITLE BLOCK */
     .hero-title-block {
       background: var(--blue);
       color: var(--white);
       text-align: center;
       padding: 25px 15px 15px;
-      position: relative;
     }
     .hero-title-block h1 {
       font-size: 2.6em;
@@ -92,7 +91,7 @@
       color: var(--blue);
     }
 
-    /* SECTION HEADERS */
+    /* CONTENT SECTIONS */
     .section {
       max-width: 900px;
       margin: 40px auto;
@@ -133,7 +132,7 @@
       max-width: 900px;
       margin: 0 auto;
       background: var(--white);
-      color: #333;
+      color: #000;
       border-radius: 8px;
       padding: 20px;
     }
@@ -142,6 +141,31 @@
       margin-top: 15px;
       font-size: 0.9em;
       color: #fff;
+    }
+
+    /* ANNOUNCEMENTS */
+    .announcements {
+      padding: 40px 20px;
+      background: var(--gray);
+      text-align: center;
+    }
+    .announcement {
+      max-width: 800px;
+      margin: 20px auto;
+      background: var(--white);
+      border-left: 5px solid var(--blue);
+      padding: 15px 20px;
+      text-align: left;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .announcement h3 {
+      margin: 0;
+      color: var(--blue);
+    }
+    .announcement small {
+      color: #666;
+      font-size: 0.85em;
     }
 
     footer {
@@ -174,14 +198,14 @@
     <div class="slide" style="background-image:url('static/girl_eating_hotdog.jpg')"></div>
   </div>
 
-  <!-- TITLE BLOCK -->
+  <!-- TITLE -->
   <div class="hero-title-block">
     <div class="stars">★ ★ ★ ★</div>
     <h1>Gilardi Dogs</h1>
     <p>Chicago-style hot dog cart for parties, weddings, & events</p>
   </div>
 
-  <!-- CONTACT SECTION -->
+  <!-- CONTACT -->
   <section class="contact-modern">
     <h2>Contact Us</h2>
     <div class="contact-grid">
@@ -192,7 +216,7 @@
     </div>
   </section>
 
-  <!-- WHAT WE DO -->
+  <!-- SERVICES -->
   <section class="section">
     <h2>What We Do</h2>
     <p>We bring a fun, nostalgic, and delicious hot dog cart to your backyard, block party, or big day!</p>
@@ -216,11 +240,17 @@
     </div>
   </section>
 
-  <!-- AVAILABILITY CALENDAR -->
+  <!-- CALENDAR -->
   <section class="calendar">
     <h2>Availability Calendar</h2>
     <div id="calendar"></div>
     <small>Blocked dates are shown in red. All requests are manually confirmed by James after submission.</small>
+  </section>
+
+  <!-- ANNOUNCEMENTS -->
+  <section class="announcements">
+    <h2>Announcements & Events</h2>
+    <div id="announcements-container">Loading announcements...</div>
   </section>
 
   <!-- FOOTER -->
@@ -230,9 +260,11 @@
     <a href="https://instagram.com/gilardidogs" target="_blank">Instagram</a>
   </footer>
 
-  <!-- JAVASCRIPT -->
+  <!-- JS LIBRARIES -->
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
   <script>
+    // Slideshow
     let slides = document.querySelectorAll('.slide');
     let i = 0;
     setInterval(() => {
@@ -241,17 +273,38 @@
       slides[i].classList.add('active');
     }, 4000);
 
+    // Calendar setup
     document.addEventListener('DOMContentLoaded', function () {
       fetch('bookings_2025.json')
         .then(response => response.json())
         .then(data => {
-          const calendarEl = document.getElementById('calendar');
-          const calendar = new FullCalendar.Calendar(calendarEl, {
+          const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
             initialView: 'dayGridMonth',
             height: 'auto',
-            events: data.events
+            fixedWeekCount: false, // only show 4 weeks if possible
+            events: data.events,
+            eventColor: '#e63946',
+            eventTextColor: '#000'
           });
           calendar.render();
+        });
+
+      // Load announcements
+      fetch('public_announcements_2025.json')
+        .then(res => res.json())
+        .then(data => {
+          const container = document.getElementById('announcements-container');
+          container.innerHTML = '';
+          const announcements = data.announcements.sort((a, b) => new Date(a.date) - new Date(b.date));
+          announcements.forEach(a => {
+            container.innerHTML += `
+              <div class="announcement">
+                <h3>${a.title}</h3>
+                <small>${a.date}</small>
+                <p>${a.description}</p>
+              </div>
+            `;
+          });
         });
     });
   </script>
