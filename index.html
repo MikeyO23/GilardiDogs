@@ -136,6 +136,14 @@
       border-radius: 8px;
       padding: 20px;
     }
+
+    /* Ensure calendar event text is black */
+    .fc-event-title, 
+    .fc .fc-event-main {
+      color: #000 !important;
+      font-weight: 600;
+    }
+
     .calendar small {
       display: block;
       margin-top: 15px;
@@ -189,15 +197,14 @@
 </head>
 <body>
 
-  <!-- HERO SLIDESHOW -->
-  <!-- HERO SLIDESHOW -->
-  <div class="slideshow">
-    <div class="slide active" style="background-image:url('static/owner_cart.jpg')"></div>
-    <div class="slide" style="background-image:url('static/wedding_golf_course.jpg')"></div>
-    <div class="slide" style="background-image:url('static/hotdogimages.jpeg')"></div>
-    <div class="slide" style="background-image:url('static/girl_eating_hotdog.jpg')"></div>
-    <div class="slide" style="background-image:url('static/owner_daughter.jpg')"></div>
-    <div class="slide" style="background-image:url('static/owner_wife_2.jpeg')"></div>
+<!-- HERO SLIDESHOW -->
+<div class="slideshow">
+  <div class="slide active" style="background-image:url('static/owner_cart.jpg')"></div>
+  <div class="slide" style="background-image:url('static/wedding_golf_course.jpg')"></div>
+  <div class="slide" style="background-image:url('static/hotdogimages.jpeg')"></div>
+  <div class="slide" style="background-image:url('static/girl_eating_hotdog.jpg')"></div>
+  <div class="slide" style="background-image:url('static/owner_daughter.jpg')"></div>
+  <div class="slide" style="background-image:url('static/owner_wife_2.jpeg')"></div>
     <div class="slide" style="background-image:url('static/wedding_venue1.jpg')"></div>
     <div class="slide" style="background-image:url('static/wedding_venue_2.jpg')"></div>
     <div class="slide" style="background-image:url('static/owner_wife_park.jpeg')"></div>
@@ -288,7 +295,7 @@
           const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
             initialView: 'dayGridMonth',
             height: 'auto',
-            fixedWeekCount: false, // only show 4 weeks if possible
+            fixedWeekCount: false,
             events: data.events,
             eventColor: '#e63946',
             eventTextColor: '#000'
