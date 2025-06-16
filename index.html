@@ -3,51 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gilardi Dogs - Book Now for 2025!</title>
+  <title>Gilardi Dogs - Booking for 2025!</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; background: #fff; color: #333; line-height: 1.6; }
-    header, .section, footer { padding: 20px; text-align: center; }
-    .slideshow-container { position: relative; max-width: 100%; margin: auto; }
-    .slide { display: none; }
-    .slide img { width: 100%; max-height: 400px; object-fit: cover; }
-
-    .booking-callout {
-      background: #fef3c7;
-      padding: 30px;
-      font-size: 1.2em;
-      font-weight: bold;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8dc;
+      color: #333;
+      line-height: 1.6;
     }
-
-    .events-list, .contact, .social {
-      max-width: 600px;
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
       margin: auto;
-      padding: 30px 15px;
+    }
+    .slide { display: none; }
+    .slide img {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
     }
 
-    .events-list ul { list-style-type: none; padding: 0; }
-    .events-list li {
-      background: #f3f4f6;
+    header {
+      background-color: #f44336;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      font-weight: 300;
+    }
+
+    section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .highlight {
+      background: #fff3cd;
+      font-size: 1.3em;
+      padding: 20px;
+      border-top: 2px solid #ffc107;
+      border-bottom: 2px solid #ffc107;
+    }
+
+    .info-section {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
       margin: 10px 0;
+      font-size: 1.1em;
+      background: #f1f1f1;
       padding: 10px;
       border-radius: 8px;
-      font-weight: 500;
     }
 
-    .contact p, .social p { margin: 10px 0; font-size: 1.1em; }
+    .contact p, .social p {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
 
-    .logo-img { max-width: 180px; margin: 20px auto; }
+    .social a {
+      margin: 0 10px;
+      color: #f44336;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
     footer {
+      background: #f3f3f3;
+      padding: 15px;
       font-size: 0.9em;
-      color: #666;
-      background: #f9fafb;
+      color: #777;
       margin-top: 40px;
     }
 
-    a { color: #f43f5e; text-decoration: none; font-weight: bold; }
-
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .slide img { max-height: 250px; }
     }
   </style>
@@ -55,63 +100,85 @@
 <body>
 
   <div class="slideshow-container">
-    <div class="slide fade"><img src="hotdogcart1.png" alt="Hotdog Cart 1"></div>
-    <div class="slide fade"><img src="hotdogcart2.png" alt="Hotdog Cart 2"></div>
-    <div class="slide fade"><img src="hotdogcart3.png" alt="Hotdog Cart 3"></div>
+    <div class="slide fade"><img src="static/blockparty_1.jpg" alt="Blockparty 1"></div>
+    <div class="slide fade"><img src="static/girl_eating_hotdog.jpg" alt="Girl Eating Hotdog"></div>
+    <div class="slide fade"><img src="static/girls_1.jpg" alt="Girls 1"></div>
+    <div class="slide fade"><img src="static/hotdogimages.jpeg" alt="Hotdogimages"></div>
+    <div class="slide fade"><img src="static/owner_cart.jpg" alt="Owner Cart"></div>
+    <div class="slide fade"><img src="static/owner_daughter.jpg" alt="Owner Daughter"></div>
+    <div class="slide fade"><img src="static/owner_wife_2.jpg" alt="Owner Wife 2"></div>
+    <div class="slide fade"><img src="static/owner_wife_park.jpg" alt="Owner Wife Park"></div>
+    <div class="slide fade"><img src="static/wedding_golf_course.jpg" alt="Wedding Golf Course"></div>
+    <div class="slide fade"><img src="static/wedding_venue1.jpg" alt="Wedding Venue 1"></div>
+    <div class="slide fade"><img src="static/wedding_venue_2.jpg" alt="Wedding Venue 2"></div>
   </div>
 
   <header>
-    <img src="logo.png" alt="Gilardi Dogs Logo" class="logo-img">
     <h1>Gilardi Dogs</h1>
-    <p>Your Neighborhood Hotdog Guy 🌭</p>
+    <p>The Neighborhood Hot Dog Cart 🌭</p>
   </header>
 
-  <section class="booking-callout">
-    📣 Now Booking 2025 Parties! Let’s bring the iconic Chicago-style hot dog cart to your next event!
+  <section class="highlight">
+    🎉 NOW BOOKING 2025 PARTIES! <br>
+    Whether it’s a backyard bash, corporate event, or wedding, bring the Chicago-style hot dog experience to your event.
   </section>
 
-  <section class="events-list">
-    <h2>Perfect For:</h2>
+  <section class="info-section">
+    <h2>Perfect for:</h2>
     <ul>
       <li>Birthday Parties</li>
       <li>Graduations</li>
       <li>Corporate Events</li>
       <li>Block Parties</li>
+      <li>Weddings & Receptions</li>
     </ul>
   </section>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>📞 <strong>James Gilardi</strong></p>
-    <p>Phone: <a href="tel:+17082976863">(708) 297-6863</a></p>
-    <p>Email: <a href="mailto:gilardidogs@gmail.com">gilardidogs@gmail.com</a></p>
+  <section class="info-section">
+    <h2>How It Works</h2>
+    <ul>
+      <li>✅ Reach out to check date availability</li>
+      <li>⏱️ 2 Hours of unlimited service</li>
+      <li>💲 Priced per person</li>
+      <li>🛠️ We handle setup & bring the cart</li>
+      <li>🌭 Hot Dogs, Polish, Tamales included</li>
+      <li>🧼 We clean up so you can relax!</li>
+    </ul>
   </section>
 
-  <section class="social">
+  <section class="info-section contact">
+    <h2>Contact Us</h2>
+    <p><strong>James Gilardi</strong></p>
+    <p>📞 <a href="tel:+17082976863">(708) 297-6863</a></p>
+    <p>📧 <a href="mailto:gilardidogs@gmail.com">gilardidogs@gmail.com</a></p>
+  </section>
+
+  <section class="info-section social">
     <h2>Follow Us</h2>
-    <p>📘 <a href="https://www.facebook.com/GilardiDogs" target="_blank">Facebook: Gilardi Dogs</a></p>
-    <p>📸 <a href="https://www.instagram.com/gilardidogs" target="_blank">@gilardidogs</a></p>
+    <p>
+      📘 <a href="https://www.facebook.com/GilardiDogs" target="_blank">Facebook</a>
+      📸 <a href="https://www.instagram.com/gilardidogs" target="_blank">Instagram</a>
+    </p>
   </section>
 
   <footer>
-    © 2025 Gilardi Dogs — The Neighborhood Hot Dog Cart
+    © 2025 Gilardi Dogs — All rights reserved
   </footer>
 
   <script>
     let slideIndex = 0;
     showSlides();
-
     function showSlides() {
-      let i;
       const slides = document.getElementsByClassName("slide");
-      for (i = 0; i < slides.length; i++) {
+      for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
       }
       slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 3000); // Change image every 3 seconds
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";  
+      setTimeout(showSlides, 3000); // Change every 3 seconds
     }
   </script>
 </body>
 </html>
+
