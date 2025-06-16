@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Gilardi Dogs | Book Your 2025 Event</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
   <style>
     :root {
       --blue: #264653;
@@ -11,6 +12,7 @@
       --gray: #f4f4f4;
       --accent: #f4a261;
       --white: #ffffff;
+      --red: #e63946;
     }
     body {
       margin: 0;
@@ -18,6 +20,8 @@
       background: var(--white);
       color: var(--blue);
     }
+
+    /* SLIDESHOW */
     .slideshow {
       position: relative;
       height: 60vh;
@@ -33,55 +37,55 @@
       transition: opacity 1s ease-in-out;
     }
     .slide.active { opacity: 1; }
-    .hero-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: var(--white);
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero-overlay h1 { font-size: 2.8em; margin: 0; }
-    .hero-overlay p { font-size: 1.2em; margin-top: 10px; }
 
+    /* HERO TITLE BELOW BANNER */
+    .hero-title-block {
+      background: var(--white);
+      text-align: center;
+      padding: 30px 15px 10px;
+    }
+    .hero-title-block h1 {
+      color: var(--blue);
+      font-size: 2.4em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .hero-title-block p {
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    /* CONTACT */
     .contact-modern {
       background: #f4f4f4;
       padding: 40px 20px;
       text-align: center;
     }
     .contact-modern h2 {
-      margin-bottom: 20px;
       font-size: 1.8em;
       color: var(--blue);
+      margin-bottom: 20px;
     }
-    .contact-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
+      justify-items: center;
     }
-    .contact-card {
+    .contact-item {
       background: var(--white);
-      padding: 15px 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      font-size: 1.1em;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 200px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      font-weight: 600;
+      font-size: 1.05em;
     }
-    .contact-card a {
-      color: var(--blue);
-      font-weight: bold;
+    .contact-item a {
       text-decoration: none;
+      color: var(--blue);
     }
 
+    /* SECTIONS */
     .section {
       max-width: 900px;
       margin: 40px auto;
@@ -96,14 +100,12 @@
       display: inline-block;
       padding-bottom: 5px;
     }
-
     .services, .how {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 15px;
       margin-top: 20px;
     }
-
     .card {
       background: var(--yellow);
       padding: 15px;
@@ -112,28 +114,21 @@
       color: var(--blue);
     }
 
+    /* CALENDAR */
     .calendar {
       background: var(--accent);
       color: var(--white);
       padding: 40px 20px;
       text-align: center;
     }
-
-    .calendar-wrapper {
-      max-width: 100%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-    }
-
-    .calendar iframe {
-      width: 100%;
-      max-width: 850px;
-      height: 400px;
+    #calendar {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      color: #333;
       border-radius: 8px;
-      border: none;
+      padding: 20px;
     }
-
     .calendar small {
       display: block;
       margin-top: 15px;
@@ -141,6 +136,7 @@
       color: #fff;
     }
 
+    /* FOOTER */
     footer {
       background: var(--blue);
       color: var(--white);
@@ -155,8 +151,8 @@
     }
 
     @media (max-width: 600px) {
-      .hero-overlay h1 { font-size: 2em; }
-      .calendar iframe { height: 380px; }
+      .hero-title-block h1 { font-size: 2em; }
+      #calendar { padding: 10px; }
     }
   </style>
 </head>
@@ -169,32 +165,22 @@
     <div class="slide" style="background-image:url('static/owner_cart.jpg')"></div>
     <div class="slide" style="background-image:url('static/hotdogimages.jpeg')"></div>
     <div class="slide" style="background-image:url('static/girl_eating_hotdog.jpg')"></div>
-    <div class="hero-overlay">
-      <h1>Gilardi Dogs</h1>
-      <p>Chicago-style hot dog cart for parties, weddings, & events</p>
-    </div>
+  </div>
+
+  <!-- TITLE BELOW HERO -->
+  <div class="hero-title-block">
+    <h1>Gilardi Dogs</h1>
+    <p>Chicago-style hot dog cart for parties, weddings, & events</p>
   </div>
 
   <!-- CONTACT SECTION -->
   <section class="contact-modern">
     <h2>Contact Us</h2>
-    <div class="contact-cards">
-      <div class="contact-card">
-        <span>📞</span>
-        <a href="tel:+17082976863">(708) 297‑6863</a>
-      </div>
-      <div class="contact-card">
-        <span>📧</span>
-        <a href="mailto:gilardidogs@gmail.com">gilardidogs@gmail.com</a>
-      </div>
-      <div class="contact-card">
-        <span>📘</span>
-        <a href="https://www.facebook.com/GilardiDogs" target="_blank">Facebook</a>
-      </div>
-      <div class="contact-card">
-        <span>📸</span>
-        <a href="https://www.instagram.com/gilardidogs" target="_blank">Instagram</a>
-      </div>
+    <div class="contact-grid">
+      <div class="contact-item">📞 <a href="tel:+17082976863">(708) 297‑6863</a></div>
+      <div class="contact-item">📧 <a href="mailto:gilardidogs@gmail.com">gilardidogs@gmail.com</a></div>
+      <div class="contact-item">📘 <a href="https://www.facebook.com/GilardiDogs" target="_blank">Facebook</a></div>
+      <div class="contact-item">📸 <a href="https://www.instagram.com/gilardidogs" target="_blank">Instagram</a></div>
     </div>
   </section>
 
@@ -222,18 +208,11 @@
     </div>
   </section>
 
-  <!-- CALENDAR EMBED -->
+  <!-- STATIC CALENDAR -->
   <section class="calendar">
-    <h2>Request an Open Date</h2>
-    <div class="calendar-wrapper">
-      <iframe 
-        src="https://calendar.google.com/calendar/embed?src=90f541f6622332a694866b02518edb4b8e1115b22f274d1956f3b52467d29f6b%40group.calendar.google.com&ctz=America%2FChicago" 
-        scrolling="no">
-      </iframe>
-    </div>
-    <small>
-      Submitting a time on the calendar does not guarantee availability. You'll receive a confirmation from James within 48–72 hours.
-    </small>
+    <h2>Availability Calendar</h2>
+    <div id="calendar"></div>
+    <small>Blocked dates are shown in red. All requests are manually confirmed by James after submission.</small>
   </section>
 
   <!-- FOOTER -->
@@ -243,7 +222,8 @@
     <a href="https://instagram.com/gilardidogs" target="_blank">Instagram</a>
   </footer>
 
-  <!-- SLIDESHOW SCRIPT -->
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
   <script>
     let slides = document.querySelectorAll('.slide');
     let i = 0;
@@ -252,6 +232,20 @@
       i = (i + 1) % slides.length;
       slides[i].classList.add('active');
     }, 4000);
+
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('bookings_2025.json')
+        .then(response => response.json())
+        .then(data => {
+          const calendarEl = document.getElementById('calendar');
+          const calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            height: 'auto',
+            events: data.events
+          });
+          calendar.render();
+        });
+    });
   </script>
 </body>
 </html>
