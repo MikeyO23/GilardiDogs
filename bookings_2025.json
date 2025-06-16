@@ -1,0 +1,244 @@
+{
+  "events": [
+    {
+      "title": "Booked",
+      "start": "2025-01-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-01-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-01-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-02-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-02-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-02-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-03-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-03-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-03-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-04-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-04-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-04-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-05-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-05-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-05-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-06-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-06-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-06-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-07-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-07-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-07-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-08-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-08-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-08-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-09-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-09-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-09-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-10-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-10-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-10-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-11-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-11-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-11-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-12-05",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-12-15",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "Booked",
+      "start": "2025-12-25",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "St. Dan's Carnival",
+      "start": "2025-06-19",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "St. Dan's Carnival",
+      "start": "2025-06-20",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "St. Dan's Carnival",
+      "start": "2025-06-21",
+      "display": "background",
+      "color": "#e63946"
+    },
+    {
+      "title": "St. Dan's Carnival",
+      "start": "2025-06-22",
+      "display": "background",
+      "color": "#e63946"
+    }
+  ]
+}
