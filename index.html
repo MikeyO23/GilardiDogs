@@ -202,18 +202,18 @@
   <div class="slide active" style="background-image:url('static/owner_cart.jpg')"></div>
   <div class="slide" style="background-image:url('static/wedding_golf_course.jpg')"></div>
   <div class="slide" style="background-image:url('static/hotdogimages.jpeg')"></div>
-  <div class="slide" style="background-image:url('static/girl_eating_hotdog.jpg')"></div>
-  <div class="slide" style="background-image:url('static/owner_daughter.jpg')"></div>
-  <div class="slide" style="background-image:url('static/owner_wife_2.jpeg')"></div>
+    <div class="slide" style="background-image:url('static/girl_eating_hotdog.jpg')"></div>
+    <div class="slide" style="background-image:url('static/owner_daughter.jpg')"></div>
+    <div class="slide" style="background-image:url('static/owner_wife_2.jpeg')"></div>
     <div class="slide" style="background-image:url('static/wedding_venue1.jpg')"></div>
     <div class="slide" style="background-image:url('static/wedding_venue_2.jpg')"></div>
     <div class="slide" style="background-image:url('static/owner_wife_park.jpeg')"></div>
     <div class="slide" style="background-image:url('static/girls_1.jpg')"></div>
     <div class="slide" style="background-image:url('static/girl_eating_hotdog.jpg')"></div>
   </div>
-
-  <!-- TITLE -->
-  <div class="hero-title-block">
+  
+      <!-- TITLE -->
+      <div class="hero-title-block">
     <div class="stars">★ ★ ★ ★</div>
     <h1>Gilardi Dogs</h1>
     <p>Chicago-style hot dog cart for parties, weddings, & events</p>
@@ -254,18 +254,6 @@
     </div>
   </section>
 
-  <!-- CALENDAR -->
-  <section class="calendar">
-    <h2>Availability Calendar</h2>
-    <div id="calendar"></div>
-    <small>Blocked dates are shown in red. All requests are manually confirmed by James after submission.</small>
-  </section>
-
-  <!-- ANNOUNCEMENTS -->
-  <section class="announcements">
-    <h2>Announcements & Events</h2>
-    <div id="announcements-container">Loading announcements...</div>
-  </section>
 
   <!-- FOOTER -->
   <footer>
@@ -286,41 +274,6 @@
       i = (i + 1) % slides.length;
       slides[i].classList.add('active');
     }, 4000);
-
-    // Calendar setup
-    document.addEventListener('DOMContentLoaded', function () {
-      fetch('bookings_2025.json')
-        .then(response => response.json())
-        .then(data => {
-          const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
-            initialView: 'dayGridMonth',
-            height: 'auto',
-            fixedWeekCount: false,
-            events: data.events,
-            eventColor: '#e63946',
-            eventTextColor: '#000'
-          });
-          calendar.render();
-        });
-
-      // Load announcements
-      fetch('public_announcements_2025.json')
-        .then(res => res.json())
-        .then(data => {
-          const container = document.getElementById('announcements-container');
-          container.innerHTML = '';
-          const announcements = data.announcements.sort((a, b) => new Date(a.date) - new Date(b.date));
-          announcements.forEach(a => {
-            container.innerHTML += `
-              <div class="announcement">
-                <h3>${a.title}</h3>
-                <small>${a.date}</small>
-                <p>${a.description}</p>
-              </div>
-            `;
-          });
-        });
-    });
   </script>
 </body>
 </html>
